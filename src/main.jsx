@@ -6,12 +6,16 @@ import {
 } from "react-router-dom";
 import "./index.css";
 import Mood from "./Mood";
+import Chatbot from "./AIResponse";
+import App from "./App";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Mood/>,
+    element: <App/>,
+   
   },
+   
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
@@ -19,3 +23,4 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <RouterProvider router={router} />
   </React.StrictMode>
 );
+//const geminiApiKey = "AIzaSyAtWbjP0TbjSy0bZkG7-69EjORVT1TCSGg";

@@ -1,12 +1,21 @@
-import './App.css'
-import Chatbot from './Chatbot';
-function App() {
+ 
+
+import React, { useState } from "react";
+ 
+import AIResponse from "./AIResponse.jsx";
+import Mood from "./Mood.jsx";
+
+export default function App() {
+  const [selectedMood, setSelectedMood] = useState(null);
+
+  const handleMoodSelect = (moodId) => {
+    setSelectedMood(moodId);
+  };
+
   return (
     <div className="App">
-      <h1 style={{color: 'gray'}}>Mental Health Check in Asssistant Chatbot</h1>
-      <Chatbot />
+      <Mood onMoodSelect={handleMoodSelect} selectedMood={selectedMood} />
+      {selectedMood && <AIResponse moodId={selectedMood} />}
     </div>
   );
 }
-
-export default App;
