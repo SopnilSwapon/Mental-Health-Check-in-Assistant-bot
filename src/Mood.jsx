@@ -1,15 +1,21 @@
 import React from "react";
+// import { Player } from "lottie-react"; // Import Player for Lottie animations
+import smileAnimation from "./assets/Animation - 1733463744414.json"; // Path to the .lottie file
+import sadAnimation from "./assets/Animation - 1733466104225.json"; // Path to the .lottie file
+import angryAnimation from "./assets/Animation - 1733466222785.json"; // Path to the .lottie file
+import excitedAnimation from "./assets/Animation - 1733466946804.json"; // Path to the .lottie file
+import Lottie from "lottie-react";
 
 export default function Mood() {
-  // Mood data: Each mood has a unique ID, name, and emoji
+  // Mood data: Each mood has a unique ID, name, and optional Lottie animation or emoji
   const moods = [
-    { id: 1, name: "Happy", emoji: "😊" },
-    { id: 2, name: "Sad", emoji: "😢" },
-    { id: 3, name: "Angry", emoji: "😡" },
-    { id: 4, name: "Excited", emoji: "🤩" },
+    { id: 1, name: "Happy", emoji:<Lottie className="w-full h-[150px] lg:h-full md:h-full" animationData={smileAnimation}></Lottie>  },
+    { id: 2, name: "Angry", emoji:<Lottie className="w-full h-[150px] lg:h-full md:h-full" animationData={angryAnimation}></Lottie>},
+    { id: 3, name: "Sad", emoji:<Lottie className="w-full h-[150px] lg:h-full md:h-full" animationData={sadAnimation}></Lottie>},
+    { id: 4, name: "Excited", emoji:<Lottie className="w-full h-[150px] lg:h-full md:h-full" animationData={excitedAnimation}></Lottie>},
     { id: 5, name: "Anxious", emoji: "😰" },
   ];
-
+// console.log(smileAnimation, 'animation')
   // Function to handle card click
   const handleMoodClick = (moodId) => {
     console.log(`Selected Mood ID: ${moodId}`);
@@ -26,15 +32,11 @@ export default function Mood() {
             className="flex flex-col items-center justify-center w-32 h-40 p-4 bg-gray-100 border border-gray-300 rounded-lg shadow-sm hover:scale-105 hover:shadow-lg transition-transform duration-200 cursor-pointer"
             onClick={() => handleMoodClick(mood.id)}
           >
-            <span className="text-4xl">{mood.emoji}</span>
+            <div className="text-4xl">{mood.emoji}</div>
             <p className="mt-2 text-lg font-medium text-gray-700">{mood.name}</p>
           </div>
         ))}
       </div>
-      <button className="btn btn-primary">primary</button>
-      <button className="btn btn-blue">
-  Button
-</button>
     </div>
   );
 }
