@@ -23,4 +23,3 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <RouterProvider router={router} />
   </React.StrictMode>
 );
-//const geminiApiKey = "AIzaSyAtWbjP0TbjSy0bZkG7-69EjORVT1TCSGg";
