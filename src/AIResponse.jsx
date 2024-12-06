@@ -28,11 +28,11 @@ const AIResponse = ({ moodId }) => {
 
   const getPromptBasedOnMood = (moodId) => {
     const prompts = {
-      1: "What activities can enhance happiness, give me in correct tips step by step?",
-      2: "How can someone deal with anger in a healthy way,give me in correct tips step by step?",
-      3: "What are some self-care tips for sadness,give me in correct tips step by step?",
-      4: "How can someone channel their excitement productively,give me in correct tips step by step?",
-      5: "What are some effective methods to reduce anxiety,give me in correct tips step by step?",
+      1: "What activities can enhance happiness, give me in correct tips step by step, all important tips within 10 sentences?",
+      2: "How can someone deal with anger in a healthy way,give me in correct tips step by step , all important tips within 10 sentences?",
+      3: "What are some self-care tips for sadness,give me in correct tips step by step , all important tips within 10 sentences?",
+      4: "How can someone channel their excitement productively,give me in correct tips step by step, all important tips within 10 sentences?",
+      5: "What are some effective methods to reduce anxiety,give me in correct tips step by step , all important tips within 10 sentences?",
     };
     return prompts[moodId] || "Tell me something interesting.";
   };
@@ -45,13 +45,13 @@ const AIResponse = ({ moodId }) => {
       setAnimatedWords((prev) => [...prev, words[index]]);
       index++;
       if (index === words.length) clearInterval(interval);
-    }, 300); // Adjust delay for animation
+    }, 300);  
   };
 
   return (
     <div className="flex flex-col items-center mt-8">
       <div className="w-4/5 lg:w-2/3 bg-gray-100 p-6 rounded-lg shadow-lg">
-        <h2 className="text-xl font-bold mb-4">AI Response</h2>
+        {/* <h2 className="text-xl font-bold mb-4">AI Response</h2> */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}

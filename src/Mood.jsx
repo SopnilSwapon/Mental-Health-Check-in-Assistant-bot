@@ -16,7 +16,7 @@ export default function Mood({ onMoodSelect, selectedMood }) {
   ];
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen">
+    <div className="flex flex-col items-center justify-center mt-10">
       <h1 className="text-2xl font-bold mb-6 text-gray-800">Select Your Mood</h1>
       <div className="relative grid grid-cols-2 sm:grid-cols-3 gap-6">
         {moods.map((mood) => (

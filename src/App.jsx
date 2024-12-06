@@ -4,6 +4,7 @@ import React, { useState } from "react";
  
 import AIResponse from "./AIResponse.jsx";
 import Mood from "./Mood.jsx";
+import Chatbot from "./Chatbot.jsx";
 
 export default function App() {
   const [selectedMood, setSelectedMood] = useState(null);
@@ -16,6 +17,10 @@ export default function App() {
     <div className="App">
       <Mood onMoodSelect={handleMoodSelect} selectedMood={selectedMood} />
       {selectedMood && <AIResponse moodId={selectedMood} />}
+      <div>
+       
+        <Chatbot/>
+      </div>
     </div>
   );
 }
